@@ -153,3 +153,5 @@ a queue is a line, a buffer, that stores messages before any consumer takes it f
 an exchange is a delivery office employee, whose job is to route messages
 exchange receives message from producers and it routes them to queues
 the exchange knows which queue to deliver message using routing key that is attached to each message
+
+create a queue in rabbitmq console
