@@ -129,4 +129,9 @@ maintaining library manually is nightmare
 dependency management
 
 
+to install rabbitmq , must install erlang first
+download erlang   - http://www.erlang.org/downloads
+download rabbitmq - https://www.rabbitmq.com/download.html
+rabbit mq is written in erlang
 
+make sure to start the rabbitmq service
