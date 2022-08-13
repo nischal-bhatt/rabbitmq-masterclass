@@ -1,0 +1,132 @@
+notes
+1.rabbitmq 
+
+open source messaging system that can be used for multiple use cases
+instructor during this course
+step by step to implement messaging system
+real time integration 
+
+2.course structure
+introduction
+technology in this course
+installation of tools required
+rabbitmq basic concepts - to get technical understanding of rabbitmq
+writing codes using java spring and rabbitmq
+error handling
+rabbitmq on cloud
+retry mechanism using spring boot
+bonus section coming up
+
+3. how to get max value from this course
+   1. grab a hot drink, cake , warm blanket if you have to  - lol
+   2. keep your spirit high.. lol
+   3. pause every 30 seconds and typ code 
+   4. timotius phamungkas - accept - unusual and weird accept
+   5. manually generated subtitles
+   6. turn on subs if needed
+   7. dont skip lectures - 
+   8. if you get stuck in a lecture - it is ok - it is the joy of learning new things
+   9. we can feel such happy feeling when we overcome challenge :)
+   10. Q&A of course
+   11. stack overflow
+   12. 
+
+4. Technology in this course
+ 
+   1. rabbitmq3.x --> rabbitmq 3.8
+   2. prior 3.8 is still ok
+   3. rabbitmq version 
+   4.  as long as 3.x it should be ok 
+   5.  java 15 used in this course --> can use any starting from java 8
+   6.  var keyword for data type
+   7.  spring boot 2 
+   9. resrouces and reference 
+  10. 
+
+5.  Messaging systems
+
+    1. messaging system is communication mechanism for application to application (A2A)
+    2. handle messages among apps and systems thruout an organization
+    3. integrate applications! 
+    4. example use case 
+        in a company there are several systems
+        i.e. human resource system
+        i.e. marketing system
+        i.e. active directory 
+ 
+        
+data will come to human resource system --> marketing system will pull data from human 
+resource system. marketing system process that data 
+
+human resource will push data to active directory as a text file say at 1am
+daily process at 2am
+
+1.data come to human resource system
+2.human resource system will send incoming data in real time to rabbitmq
+3. both marketing system and active directory receive incoming data and each of them
+   will process it according to their requirement
+4. source application -->  
+   target application -->
+if got many integration points, then many integration points! 
+   different implementations! 
+
+5. with messaging system
+   1. messaging system allows you to decouple your application and data communication
+   2. source data sends data to messaging system
+   3. target application takes it! 
+   4. send data in json
+   5. messaging system use case : 
+    
+6. with rabbit mq.. data can be put on the queue to be processed later.. data locking avoided
+
+messaging system.. a note
+1.  
+2.
+3.
+4.
+5.
+6.
+7.
+
+rabbit mq
+1. introduction - 
+2. open source messaging system - dont have to pay fee to use it
+3. rabbitMQ queue
+4. rabbitmq is reliable
+5. can use rabbitmq on cloud
+6. rabbitmq - excellent prog lang support
+7. 
+
+java and spring
+1. java prog language more than 20 years
+2. top three most used programming languages
+3. regular updates
+4. starting from java 10 - twice release every year
+5. runs on top of jvm
+6. so can run on any platform 
+7. oracle & open source implementation like open jdk 
+8. use frameworks- spring boot -to increase productivity 
+9. with plain java -- need alot of boilerplate code
+10. spring boot - no more xml! 
+11. config files
+12. start.spring.io
+13. spring modules or projects
+14. spring technology stack
+    1. microservice
+    2. sql and nosql
+    3. load balancer and api gateway
+    4. kafka and rabbitmq
+    5. 
+
+15. eclipse 
+    1. spring tools suite
+    2. official project from spring  
+    3. provide ready to use features 
+    4. we will use spring tool suite in this course! 
+
+gradle - build automation tool 
+maintaining library manually is nightmare
+dependency management
+
+
+
