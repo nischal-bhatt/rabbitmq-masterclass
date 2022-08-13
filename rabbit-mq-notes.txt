@@ -142,3 +142,8 @@ u have installed your first rabbitmq server
 java
 open source implementation openjdk
 need jdk 11- we;ll see later lol
+
+rabbitmq basic concepts
+1. unique delivery office --> 
+2. publisher --> app that sends msg to rabbitmq
+3. subscriber --> consumer! consume and subscribe got difference!
