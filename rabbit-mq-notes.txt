@@ -138,3 +138,7 @@ make sure to start the rabbitmq service
 
 http://localhost:15672/#/ ---> at this link if u can see
 u have installed your first rabbitmq server
+
+java
+open source implementation openjdk
+need jdk 11- we;ll see later lol
