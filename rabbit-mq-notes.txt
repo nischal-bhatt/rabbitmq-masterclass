@@ -147,3 +147,9 @@ rabbitmq basic concepts
 1. unique delivery office --> 
 2. publisher --> app that sends msg to rabbitmq
 3. subscriber --> consumer! consume and subscribe got difference!
+
+
+a queue is a line, a buffer, that stores messages before any consumer takes it for further processing
+an exchange is a delivery office employee, whose job is to route messages
+exchange receives message from producers and it routes them to queues
+the exchange knows which queue to deliver message using routing key that is attached to each message
