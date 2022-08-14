@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class HelloRabbitConsumer {
-
+//typing
 	@RabbitListener(queues = "course.hello")
 	public void listen(String message)
 	{
