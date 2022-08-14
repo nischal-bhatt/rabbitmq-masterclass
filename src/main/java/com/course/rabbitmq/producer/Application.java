@@ -9,14 +9,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.course.rabbitmq.producer.entity.Picture;
-import com.course.rabbitmq.producer.producer.PictureProducer;
+import com.course.rabbitmq.producer.producer.PictureProducerTwo;
 
 @SpringBootApplication
 //@EnableScheduling
 public class Application implements CommandLineRunner{
 
 	@Autowired
-	private PictureProducer pictureProducer;
+	private PictureProducerTwo pictureProducerTwo;
 	
 	private final List<String> SOURCES = List.of("mobile","web");
 	private final List<String> TYPES = List.of("jpg","png","svg");
@@ -59,7 +59,7 @@ public class Application implements CommandLineRunner{
 			picture.setSource(SOURCES.get(i % SOURCES.size()));
 			picture.setType(TYPES.get(i % TYPES.size()));
 			
-			this.pictureProducer.sendMessage(picture);
+			this.pictureProducerTwo.sendMessage(picture);
 		}
 		
 	}
