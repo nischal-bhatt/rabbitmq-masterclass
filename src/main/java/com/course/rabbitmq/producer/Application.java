@@ -1,14 +1,22 @@
 package com.course.rabbitmq.producer;
 
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
+
+import com.course.rabbitmq.producer.entity.Employee;
+import com.course.rabbitmq.producer.producer.EmployeeJsonProducer;
 
 @SpringBootApplication
-@EnableScheduling
+//@EnableScheduling
 public class Application implements CommandLineRunner{
 
+	@Autowired
+	private EmployeeJsonProducer employeeJsonProducer;
+	
 	//@Autowired
 	//private HelloRabbitProducer producer;
 	
@@ -19,6 +27,12 @@ public class Application implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 	//	this.producer.sendHello("Timotius Pamungkas" + Math.random());
+		
+		for (int i =0; i<5 ; i ++)
+		{
+			var employee = new Employee("emp" + i, "Employee " + i, LocalDate.now());
+		     employeeJsonProducer.sendMessage(employee);
+		}
 		
 	}
 
