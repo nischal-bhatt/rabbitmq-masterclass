@@ -1,24 +1,29 @@
 package com.course.rabbitmq.producer;
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.course.rabbitmq.producer.entity.Furniture;
-import com.course.rabbitmq.producer.producer.FurnitureProducer;
+import com.course.rabbitmq.producer.entity.Picture;
+import com.course.rabbitmq.producer.producer.MyPictureProducer;
 
 @SpringBootApplication
 //@EnableScheduling
 public class Application implements CommandLineRunner{
 
 	@Autowired
-	private FurnitureProducer producer;
+	private MyPictureProducer producer;
+	private final List<String> SOURCES = List.of("mobile","web");
+	private final List<String> TYPES = List.of("jpg","png","svg");
+	//@Autowired
+	//private FurnitureProducer producer;
 	
-	private final List<String> COLORS = List.of("white","red","green");
-	private final List<String> MATERIALS = List.of("wood","plasic","steel");
+	//private final List<String> COLORS = List.of("white","red","green");
+	//private final List<String> MATERIALS = List.of("wood","plasic","steel");
 	
 	//@Autowired
 	//private PictureProducerTwo pictureProducerTwo;
@@ -66,7 +71,7 @@ public class Application implements CommandLineRunner{
 			
 			this.pictureProducerTwo.sendMessage(picture);
 		}*/
-		
+		/*
 		for (int i =0; i<10; i++)
 		{
 			var furniture = new Furniture();
@@ -76,6 +81,18 @@ public class Application implements CommandLineRunner{
 			furniture.setPrice(i);
 			
 			producer.sendMessage(furniture);
+		}
+		*/
+		
+		for (int i =0; i<1; i++)
+		{
+			var picture = new Picture();
+			picture.setName("Picture " + i) ;
+			picture.setSize(ThreadLocalRandom.current().nextLong(9000,10000));
+			picture.setSource(SOURCES.get(i % SOURCES.size()));
+			picture.setType(TYPES.get(i % TYPES.size()));
+			
+			producer.sendMessage(picture);
 		}
 		
 	}
