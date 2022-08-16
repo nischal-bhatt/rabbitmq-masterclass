@@ -1,6 +1,12 @@
 
 spring:
-    rabbitmq:
-         addresses: localhost:5672
-         username: guest
-         password: guest
+  main:
+    banner-mode: OFF
+  rabbitmq:
+    addresses: localhost:5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        acknowledge-mode: manual
+         
