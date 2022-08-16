@@ -1,25 +1,30 @@
 package com.course.rabbitmq.producer;
 
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.course.rabbitmq.producer.entity.Picture;
-import com.course.rabbitmq.producer.producer.PictureProducerTwo;
+import com.course.rabbitmq.producer.entity.Furniture;
+import com.course.rabbitmq.producer.producer.FurnitureProducer;
 
 @SpringBootApplication
 //@EnableScheduling
 public class Application implements CommandLineRunner{
 
 	@Autowired
-	private PictureProducerTwo pictureProducerTwo;
+	private FurnitureProducer producer;
 	
-	private final List<String> SOURCES = List.of("mobile","web");
-	private final List<String> TYPES = List.of("jpg","png","svg");
+	private final List<String> COLORS = List.of("white","red","green");
+	private final List<String> MATERIALS = List.of("wood","plasic","steel");
+	
+	//@Autowired
+	//private PictureProducerTwo pictureProducerTwo;
+	
+	//private final List<String> SOURCES = List.of("mobile","web");
+	//private final List<String> TYPES = List.of("jpg","png","svg");
 	
 	
 	//@Autowired
@@ -51,7 +56,7 @@ public class Application implements CommandLineRunner{
 	//		humanResourceProducer.sendMessage(employee);
 	//	}
 		
-		for (int i =0; i<10; i++)
+		/*for (int i =0; i<10; i++)
 		{
 			var picture = new Picture();
 			picture.setName("Picture " + i);
@@ -60,6 +65,17 @@ public class Application implements CommandLineRunner{
 			picture.setType(TYPES.get(i % TYPES.size()));
 			
 			this.pictureProducerTwo.sendMessage(picture);
+		}*/
+		
+		for (int i =0; i<10; i++)
+		{
+			var furniture = new Furniture();
+			furniture.setName("Furniture " + i);
+			furniture.setColor(COLORS.get(i % COLORS.size()));
+			furniture.setMaterial(MATERIALS.get(i % MATERIALS.size()));
+			furniture.setPrice(i);
+			
+			producer.sendMessage(furniture);
 		}
 		
 	}
